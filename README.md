@@ -5,7 +5,7 @@ Collection of scripts useful for batch updating all menpo projects
 
 #### 1. Create the new token from anaconda:
 
-See (here)[https://anaconda.org/organization/menpo/settings/access].
+See [here](https://anaconda.org/organization/menpo/settings/access).
 Note that we need to tell anaconda that the token belongs to the organisation, e.g.:
 ```
 TOKEN=$(anaconda auth --create --name condaci -o menpo)
