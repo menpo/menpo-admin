@@ -77,6 +77,7 @@ def apply_to_all_projects(working_dir, f, clone=True):
         clone_all_repos(working_dir)
     for project in PROJECTS:
         repo_dir = os.path.join(working_dir, project)
+        print('processing {}...'.format(project))
         f(repo_dir)
 
 
