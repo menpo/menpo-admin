@@ -5,9 +5,6 @@ from functools import partial
 
 # all projects using condaci
 PROJECTS = [
-            'menpofit',
-            'menpodetect',
-            'menpobench',
             'conda-boost',
             'conda-cherrypy',
             'conda-dlib',
@@ -33,7 +30,13 @@ PROJECTS = [
             'landmarkerio-server',
             'menpo',
             'menpo3d',
-            'vrml97']
+            'menpobench',
+            'menpocli',
+            'menpodetect',
+            'menpofit',
+            'menpowidgets',
+            'vrml97'
+            ]
 
 
 def load_file(fpath):
