@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.jabooth.ssh-tunnel-http</string>
+  <string>org.menpo.ssh-tunnel-http</string>
   <key>OnDemand</key>
   <false/>
   <key>ProgramArguments</key>
@@ -14,7 +14,7 @@
     <string>-N</string>
     <string>-T</string>
     <string>-R</string>
-    <string>178.62.106.221:80:localhost:8080</string>
+    <string>localhost:8080:localhost:8080</string>
     <string>argonath</string>
   </array>
 </dict>
