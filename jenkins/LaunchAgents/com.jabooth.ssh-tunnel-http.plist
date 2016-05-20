@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.jabooth.ssh-tunnel-argonath</string>
+  <string>com.jabooth.ssh-tunnel-http</string>
   <key>OnDemand</key>
   <false/>
   <key>ProgramArguments</key>

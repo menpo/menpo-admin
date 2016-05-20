@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jabooth.ssh-tunnel-ssh</string>
+  <key>OnDemand</key>
+  <false/>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/ssh</string>
+    <string>-o</string>
+    <string>ServerAliveInterval=3</string>
+    <string>-N</string>
+    <string>-T</string>
+    <string>-R</string>
+    <string>178.62.106.221:45673:localhost:22</string>
+    <string>argonath</string>
+  </array>
+</dict>
+</plist>
