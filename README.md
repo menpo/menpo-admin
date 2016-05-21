@@ -31,7 +31,7 @@ With this framework in mind, there are some admin jobs that we need to perform f
 This repository contains scripts, notebooks, and guides for all of the above jobs. It also contains the master configuration information - a list of all Menpo projects that use condaci, along with configuration parameters such as what Python builds are required.
 
 
-### Creating a new anaconda token
+### Creating/bumping our anaconda.org token
 
 #### 1. Create the new token from anaconda:
 
@@ -49,8 +49,33 @@ And paste in the token.
 
 #### 3. Install [travis CLI](https://github.com/travis-ci/travis.rb)
 
-And login: `travis login --auto`
+And login: `travis login --auto` should work if you are logged in with GitHub.
 
-#### 4. Bump keys across all projects
+#### 4. Bump key for Jenkins
 
-Use [bump_anaconda_key.ipynb](https://github.com/menpo/menpo-admin/blob/master/bump_anaconda_key.ipynb) to automatically go through all projects and update the key for app veyor and travis.
+Login to the Jenkins interface, as an admin, and go to the vault settings. You should be able to update the key to the new one.
+
+#### 5. Bump key for AppVeyor/Travis CI
+
+Use [bump_anaconda_key.ipynb](https://github.com/menpo/menpo-admin/blob/master/bump_anaconda_key.ipynb) to automatically go through all projects and update the key for AppVeyor and Travis CI.
+
+### Bumping the version for condaci
+
+#### 1. Bump condaci version for Jenkins
+
+ssh into Jenkins, and download the latest file:
+```
+wget https://github.com/menpo/condaci/blob/v0.N.x/condaci.py
+```
+where `N` is the latest version branch.
+
+Ensure it is stored at `~/condaci.py` as this is where all projects will look for loading condaci.
+
+#### 2. Bump condaci version for AppVeyor/Travis CI
+
+Use [bump_condai.ipynb](https://github.com/menpo/menpo-admin/blob/master/bump_master.ipynb) to automatically go through all projects and update the version for condaci.
+
+
+
+curl -iL -e https://jenkins.menpo.org/jenkins/manage \
+   https://jenkins.menpo.org/jenkins/administrativeMonitor/hudson.diagnosis.ReverseProxySetupMonitor/test

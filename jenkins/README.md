@@ -1,7 +1,13 @@
-# jenkins
-Scripts related to our jenkins OS X build bot
+jenkins
+=======
 
-Contents of LaunchAgents to be placed at ~/LaunchAgents
+We run a Jenkins build box Mac Mini to generate our OS X builds.
+
+The server needs to be tunnelled to a proxy. To enable this, the
+contents of LaunchAgents to be placed at `~/Library/LaunchAgents`
+```
+cp -r ./LaunchAgents/* ~/Library/LaunchAgents/
+```
 These ensure that:
 
 1. An SSH-tunnel connects our bot to the internet through a proxy
