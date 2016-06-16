@@ -36,8 +36,8 @@ Be sure to periodically visit the plugins page too, and download updates for all
 TEMPLATES
 ---------
 
-When you need to change jenkins settings, we edit the three templates we have:
-`TEMPLATE`, `TEMPLATE-pr`, `TEMPLATE-tag` and then use the scripts here to update
+When you need to change jenkins settings, we edit the two templates we have
+(`TEMPLATE` and `TEMPLATE-pr`) and then use the scripts here to update
 all projects.
 
-Note that the naming scheme here is relied upon by condaci (see https://github.com/menpo/condaci/pull/11) so **do not change the naming scheme (.e.g `-pr` `-tag`)**.
+Note that the naming scheme here is relied upon by condaci (see https://github.com/menpo/condaci/pull/11) so **do not change the naming scheme (.e.g `project-pr` `project`)**.
