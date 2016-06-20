@@ -40,6 +40,8 @@ PROJECTS = [Project(*x) for x in
              ('conda-menpo-pyvrml97', (2,)),
              ('conda-pathlib', (2,)),
              
+             # We currenty build mayavi (and all it's deps)
+             # so we can be Python 3
              ('conda-vtk', (2, 34, 35)),
              ('conda-traits', (2, 34, 35)),
              ('conda-envisage', (2, 34, 35)),
@@ -47,6 +49,10 @@ PROJECTS = [Project(*x) for x in
              ('conda-apptools', (2, 34, 35)),
              ('conda-traitsui', (2, 34, 35)),
              ('conda-mayavi', (2, 34, 35)),
+             
+             # And we also need the latest ipywidgets...
+             ('conda-ipywidgets', (2, 34, 35)),
+             ('conda-widgetsnbextension', (2, 34, 35)),
              
              # Non-Python projects
              ('vrml97', (2,)),
@@ -121,3 +127,25 @@ def replace_str(old, new, text):
 
 appveyor_op = partial(perform_operation_on_file, 'appveyor.yml')
 travis_op = partial(perform_operation_on_file, '.travis.yml')
+
+
+def copy_and_yield(fsrc, fdst, length=1024*1024):
+    """copy data from file-like object fsrc to file-like object fdst"""
+    while 1:
+        buf = fsrc.read(length)
+        if not buf:
+            break
+        fdst.write(buf)
+        yield
+    
+def download_file(url, dest_path):
+    try:
+        from urllib2 import urlopen  # Py2
+    except ImportError:
+        from urllib.request import urlopen  # Py3
+    req = urlopen(url)
+    with open(str(dest_path), 'wb') as fp:
+        for _ in copy_and_yield(req, fp):
+            pass
+    req.close()
+
