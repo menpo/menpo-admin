@@ -16,6 +16,18 @@ Our unified build system for all CI operations is [condaci](https://github.com/m
 3. Acquire a particular version of the condaci scipt.
 4. Run the condaci script, which will take care of the rest.
 
+
+Adding a new repository
+-----------------------
+
+1. Create the repo using the github website. In general, prefer a 3-clause BSD licence.
+2. Ask an owner (@jabooth or @patricksnape) to add our [CI bot team as admins on the new repo](https://github.com/orgs/menpo/teams/bots/repositories). This is needed for Jenkins to be able to function.
+3. Copy the current [menpofit/.travis.yml](https://github.com/menpo/menpofit/blob/master/.travis.yml) and augment it to suit the new repo. (We use this as a template as menpo itself has some extra fluff in there that doesn't apply generally).
+4. Go to the [Travis CI](https://travis-ci.org/profile/menpo) interface and enable the new project.
+5. Visit the settings page for the newly enabled travis CI project. Add a new secure environment variable. The key is `BINSTAR_KEY`. The value can be found by visiting the [anaconda.org admin UI](https://anaconda.org/menpo/settings/access), for menpo. Copy and paste the current access token as the value, and clear your clipboard immediately.
+6. Add the new project to this repo and re-run the notebook to create a new Jenkins settings page for the new project.
+
+
 Tasks that need automating
 --------------------------
 
