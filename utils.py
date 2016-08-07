@@ -36,6 +36,8 @@ PROJECTS = [Project(*x) for x in
              ('conda-imageio', (2, 34, 35)),
              ('conda-joblib', (2, 34, 35)),
              
+             ('workerbee', (2, 34, 35)),
+             
              # Python 2 only
              ('conda-menpo-pyvrml97', (2,)),
              ('conda-pathlib', (2,)),
