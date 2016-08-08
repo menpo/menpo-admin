@@ -163,7 +163,7 @@ C:\miniconda\%EXECUTOR_NUMBER%\%ARCH%\python.exe C:\condaci.py build .\conda</co
         </conditions>
       </condition>
       <buildStep class="hudson.tasks.BatchFile">
-        <command>call &quot;%LOCALAPPDATA%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat&quot;&#xd;
+        <command>call &quot;%LOCALAPPDATA%\Programs\Common\Microsoft\Visual C++ for Python\9.0\vcvarsall.bat&quot; %ARCH%&#xd;
 &#xd;
 python C:\condaci.py setup&#xd;
 &#xd;
