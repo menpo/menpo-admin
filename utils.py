@@ -32,6 +32,8 @@ PROJECTS = [Project(*x) for x in
              ('conda-dlib', (2, 34, 35)),
              ('conda-opencv3',  (2, 34, 35)),
              ('conda-ffmpeg', (2, 34, 35)),
+             ('conda-glew', (2, 34, 35)),
+             ('conda-glfw3', (2, 34, 35)),
              ('conda-freeimage', (2, 34, 35)),
              ('conda-imageio', (2, 34, 35)),
              ('conda-joblib', (2, 34, 35)),
