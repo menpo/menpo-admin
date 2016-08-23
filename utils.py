@@ -27,6 +27,7 @@ PROJECTS = [Project(*x) for x in
              ('cyffld2', (2, 34, 35)),
              ('cypico', (2, 34, 35)),
              
+             ('conda-arrow', (2, 34, 35)),
              ('conda-boost', (2, 34, 35)),
              ('conda-cherrypy', (2, 34, 35)),
              ('conda-dlib', (2, 34, 35)),
