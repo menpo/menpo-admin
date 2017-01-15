@@ -42,7 +42,7 @@ PROJECTS = [Project(*x) for x in
              ('workerbee', (2, 34, 35)),
              
              # Python 3 only
-             ('lsfm', (34, 35)),
+             ('lsfm', (35,)),
              
              # Python 2 only
              ('conda-menpo-pyvrml97', (2,)),
